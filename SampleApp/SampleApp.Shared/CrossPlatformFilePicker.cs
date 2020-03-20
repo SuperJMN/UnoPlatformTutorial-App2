@@ -12,7 +12,7 @@ namespace SampleApp
         public IObservable<ZafiroFile> Pick(string title, string[] extensions)
         {
             return Observable.FromAsync(() => CrossFilePicker.Current.PickFile(extensions))
-                .Select(data => new CrossPlatformFile(data));
+                .Select(data => data == null? null : new CrossPlatformFile(data));
         }
 
         public IObservable<ZafiroFile> PickSave(string title, KeyValuePair<string, IList<string>>[] extensions)

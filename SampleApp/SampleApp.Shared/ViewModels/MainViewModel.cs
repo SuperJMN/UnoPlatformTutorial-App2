@@ -4,6 +4,8 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using ReactiveUI;
 using SampleApp.Services;
+using TestApp.Shared;
+using Zafiro.UI.Infrastructure.Uno;
 
 namespace SampleApp.ViewModels
 {
@@ -14,11 +16,12 @@ namespace SampleApp.ViewModels
         private readonly ObservableAsPropertyHelper<byte[]> source;
         private readonly ObservableAsPropertyHelper<bool> isLoading;
 
-        public MainViewModel(IBitmapService bitmapService, IFilePicker filePicker)
+        public MainViewModel(IBitmapService bitmapService, IFilePicker filePicker, IDialogService dialogService)
         {
             BrowseFile = ReactiveCommand
                 .CreateFromObservable(() => Pick(filePicker));
             Rotate = ReactiveCommand.CreateFromTask(() => bitmapService.Create(Source, Angle), BrowseFile.Any());
+            Rotate.ShowExceptions(dialogService);
 
             source = BrowseFile.ToProperty(this, x => x.Source);
             destination = Rotate.ToProperty(this, x => x.Destination);
@@ -45,8 +48,7 @@ namespace SampleApp.ViewModels
         {
             using (var stream = await zafiroFile.OpenForRead())
             {
-                var readFully = await stream.ReadFully();
-                return readFully;
+                return await stream.ReadFully();
             }
         }
         
