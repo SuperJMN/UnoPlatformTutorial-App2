@@ -32,7 +32,7 @@
                 <wasm:TextBox VerticalAlignment="Center" PlaceholderText="Paste the URL" Text="{Binding Url, Mode=TwoWay}" Width="120"></wasm:TextBox>
                 <Button wasm:Content="Load image" not_wasm:Content="Pick image…" Command="{Binding BrowseFile}" Margin="0 10" />
                 <Button Content="Rotate" Command="{Binding Rotate}" Margin="0 10" />
-                <TextBox Header="Angle" Text="{Binding Angle}" />
+                <TextBox Header="Angle" Text="{Binding Angle, Mode=TwoWay}" />
             </StackPanel>
 
             <controls:HeaderedContentControl Grid.Row="1" Grid.Column="0" Header="Source image">
