@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reactive.PlatformServices;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 
 namespace SampleApp.Wasm
@@ -15,7 +16,7 @@ namespace SampleApp.Wasm
 #pragma warning restore CS0618 // Type or member is obsolete
 
             Windows.UI.Xaml.Application.Start(_ => _app = new App());
-
+            
             return 0;
         }
     }

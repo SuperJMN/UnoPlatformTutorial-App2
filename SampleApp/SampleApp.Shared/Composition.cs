@@ -10,6 +10,7 @@ using SampleApp.ViewModels;
 using SampleApp.Views;
 using Uno.Extensions;
 using Zafiro.UI.Infrastructure.Uno;
+using MainViewModel = SampleApp.ViewModels.MainViewModel;
 
 namespace SampleApp
 {
@@ -26,6 +27,11 @@ namespace SampleApp
             container.Configure(c =>
             {
                 c.ExportInstance(mapper).As<IMapper>();
+#if __WASM__
+                c.Export<WasmFilePicker>().As<IFilePicker>().Lifestyle.Singleton();
+#else
+                c.Export<CrossPlatformFilePicker>().As<IFilePicker>().Lifestyle.Singleton();
+#endif
                 c.Export<InterfaceNamingConvention>().As<INamingConventionService>();
             });
 
@@ -49,7 +55,7 @@ namespace SampleApp
         {
             var vmToViewMaps = new Dictionary<Type, Type>
             {
-                {typeof(Section1ViewModel), typeof(Section1)},
+                {typeof(MainViewModel), typeof(Section1)},
                 {typeof(Section2ViewModel), typeof(Section2)},
                 {typeof(Section3ViewModel), typeof(Section3)},
             };
@@ -61,7 +67,7 @@ namespace SampleApp
         {
             var sections = new[]
             {
-                new Section("Section 1", typeof(Section1ViewModel)){ Icon = new SymbolIcon(Symbol.Home)},
+                new Section("Section 1", typeof(MainViewModel)){ Icon = new SymbolIcon(Symbol.Home)},
                 new Section("Section 2", typeof(Section2ViewModel)){ Icon = new SymbolIcon(Symbol.Page)},
                 new Section("Section 3", typeof(Section3ViewModel)){ Icon = new SymbolIcon(Symbol.Page2)},
             };
