@@ -2,7 +2,7 @@
 using System.Reflection;
 using EasyRpc.DynamicClient;
 
-namespace SampleApp
+namespace Shared.Infrastructure
 {
     internal class InterfaceNamingConvention : INamingConventionService
     {

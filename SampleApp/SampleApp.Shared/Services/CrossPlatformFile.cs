@@ -1,11 +1,9 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
-using Windows.Networking.Sockets;
-using Windows.Storage.Pickers;
 using Plugin.FilePicker.Abstractions;
-using SampleApp.ViewModels;
+using SampleApp.Services;
 
-namespace SampleApp
+namespace SampleApp.Services
 {
     public class CrossPlatformFile : ZafiroFile
     {

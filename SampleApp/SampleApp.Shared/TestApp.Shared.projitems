@@ -18,27 +18,26 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)CorsByPassHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CrossPlatformFilePicker.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ErrorHandleMixin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CorsByPassHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CrossPlatformFilePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ErrorHandleMixin.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Composition.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ImageSourceConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)InterfaceNamingConvention.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ImageSourceConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\InterfaceNamingConvention.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)UrlFile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UrlMessage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CrossPlatformFile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IFilePicker.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UrlFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UrlMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CrossPlatformFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IFilePicker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Section1ViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Section2ViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Section3ViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SectionViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\StreamExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ZafiroFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ZafiroFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Section1.xaml.cs">
       <DependentUpon>Section1.xaml</DependentUpon>
     </Compile>
@@ -48,7 +47,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Section3.xaml.cs">
       <DependentUpon>Section3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)WasmFilePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\WasmFilePicker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
@@ -83,5 +82,9 @@
     <Compile Update="D:\Repos\SuperJMN\UnoPlatform.AppTemplate\SampleApp\SampleApp.Shared\Views\SampleSection - Copy %282%29.xaml.cs">
       <DependentUpon>SampleSection - Copy %282%29.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Infrastructure\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>

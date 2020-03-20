@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SampleApp.ViewModels
+namespace SampleApp.Services
 {
     public interface IFilePicker
     {

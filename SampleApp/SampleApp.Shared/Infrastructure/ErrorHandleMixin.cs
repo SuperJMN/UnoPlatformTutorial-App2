@@ -3,7 +3,7 @@ using System.Reactive.Linq;
 using ReactiveUI;
 using Zafiro.UI.Infrastructure.Uno;
 
-namespace TestApp.Shared
+namespace TestApp.Shared.Infrastructure
 {
     public static class ErrorHandleMixin
     {

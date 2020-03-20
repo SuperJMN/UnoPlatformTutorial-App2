@@ -3,20 +3,23 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using ReactiveUI;
+using SampleApp.Infrastructure;
 using SampleApp.Services;
+using Shared.Services;
 using TestApp.Shared;
+using TestApp.Shared.Infrastructure;
 using Zafiro.UI.Infrastructure.Uno;
 
 namespace SampleApp.ViewModels
 {
-    public class MainViewModel : ReactiveObject
+    public class Section1ViewModel : ReactiveObject
     {
         private float angle;
         private readonly ObservableAsPropertyHelper<byte[]> destination;
         private readonly ObservableAsPropertyHelper<byte[]> source;
         private readonly ObservableAsPropertyHelper<bool> isLoading;
 
-        public MainViewModel(IBitmapService bitmapService, IFilePicker filePicker, IDialogService dialogService)
+        public Section1ViewModel(IBitmapService bitmapService, IFilePicker filePicker, IDialogService dialogService)
         {
             BrowseFile = ReactiveCommand
                 .CreateFromObservable(() => Pick(filePicker));

@@ -8,9 +8,9 @@ using Grace.DependencyInjection;
 using SampleApp.Services;
 using SampleApp.ViewModels;
 using SampleApp.Views;
+using Shared.Infrastructure;
 using Uno.Extensions;
 using Zafiro.UI.Infrastructure.Uno;
-using MainViewModel = SampleApp.ViewModels.MainViewModel;
 
 namespace SampleApp
 {
@@ -55,7 +55,7 @@ namespace SampleApp
         {
             var vmToViewMaps = new Dictionary<Type, Type>
             {
-                {typeof(MainViewModel), typeof(Section1)},
+                {typeof(Section1ViewModel), typeof(Section1)},
                 {typeof(Section2ViewModel), typeof(Section2)},
                 {typeof(Section3ViewModel), typeof(Section3)},
             };
@@ -67,7 +67,7 @@ namespace SampleApp
         {
             var sections = new[]
             {
-                new Section("Section 1", typeof(MainViewModel)){ Icon = new SymbolIcon(Symbol.Home)},
+                new Section("Section 1", typeof(Section1ViewModel)){ Icon = new SymbolIcon(Symbol.Home)},
                 new Section("Section 2", typeof(Section2ViewModel)){ Icon = new SymbolIcon(Symbol.Page)},
                 new Section("Section 3", typeof(Section3ViewModel)){ Icon = new SymbolIcon(Symbol.Page2)},
             };

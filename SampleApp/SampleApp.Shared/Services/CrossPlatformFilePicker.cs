@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using Plugin.FilePicker;
-using SampleApp.ViewModels;
 
-namespace SampleApp
+namespace SampleApp.Services
 {
-    public class CrossPlatformFilePicker : ViewModels.IFilePicker
+    public class CrossPlatformFilePicker : IFilePicker
     {
         public IObservable<ZafiroFile> Pick(string title, string[] extensions)
         {

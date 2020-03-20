@@ -4,7 +4,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace SampleApp
+namespace Shared.Infrastructure
 {
     public class ImageSourceConverter : IValueConverter
     {

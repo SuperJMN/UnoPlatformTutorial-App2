@@ -6,7 +6,7 @@ using System.Reactive.Linq;
 using AutoMapper;
 using ReactiveUI;
 using SampleApp.Services;
-using TestApp.Shared;
+using TestApp.Shared.Infrastructure;
 using Uno.Disposables;
 using Zafiro.UI.Infrastructure.Uno;
 

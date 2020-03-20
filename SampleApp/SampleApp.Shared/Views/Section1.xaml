@@ -8,13 +8,13 @@
     xmlns:viewModels="using:SampleApp.ViewModels"
     xmlns:wasm="http://uno.ui/wasm"
     xmlns:not_wasm="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:sampleApp="using:SampleApp"
+    xmlns:infrastructure="using:Shared.Infrastructure"
     mc:Ignorable="d wasm"
     d:DesignHeight="300"
-    d:DesignWidth="400" d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
+    d:DesignWidth="400" d:DataContext="{d:DesignInstance viewModels:Section1ViewModel}">
 
     <UserControl.Resources>
-        <sampleApp:ImageSourceConverter x:Key="ByteArrayToBitmapSourceConverter" />
+        <infrastructure:ImageSourceConverter x:Key="ByteArrayToBitmapSourceConverter" />
     </UserControl.Resources>
     <Grid>
 
@@ -23,10 +23,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
 
             <StackPanel Spacing="10" Orientation="Horizontal">
                 <wasm:TextBox VerticalAlignment="Center" PlaceholderText="Paste the URL" Text="{Binding Url, Mode=TwoWay}" Width="120"></wasm:TextBox>
@@ -35,13 +31,19 @@
                 <TextBox Header="Angle" Text="{Binding Angle, Mode=TwoWay}" />
             </StackPanel>
 
-            <controls:HeaderedContentControl Grid.Row="1" Grid.Column="0" Header="Source image">
-                <Image Source="{Binding Source, Converter={StaticResource ByteArrayToBitmapSourceConverter}}" />
-            </controls:HeaderedContentControl>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <controls:HeaderedContentControl Header="Source image">
+                    <Image Source="{Binding Source, Converter={StaticResource ByteArrayToBitmapSourceConverter}}" />
+                </controls:HeaderedContentControl>
 
-            <controls:HeaderedContentControl Header="Result" Grid.Row="1" Grid.Column="1">
-                <Image Source="{Binding Destination, Converter={StaticResource ByteArrayToBitmapSourceConverter}}" />
-            </controls:HeaderedContentControl>
+                <controls:HeaderedContentControl Grid.Column="1" Header="Result">
+                    <Image Source="{Binding Destination, Converter={StaticResource ByteArrayToBitmapSourceConverter}}" />
+                </controls:HeaderedContentControl>
+            </Grid>
         </Grid>
 
     </Grid>

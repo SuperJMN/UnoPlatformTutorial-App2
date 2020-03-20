@@ -2,9 +2,8 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
-using SampleApp.ViewModels;
 
-namespace SampleApp
+namespace SampleApp.Services
 {
     public class UrlFile : ZafiroFile
     {

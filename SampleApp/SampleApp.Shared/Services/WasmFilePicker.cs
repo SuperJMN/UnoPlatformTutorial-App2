@@ -4,7 +4,7 @@ using System.Reactive.Linq;
 using ReactiveUI;
 using SampleApp.ViewModels;
 
-namespace SampleApp
+namespace SampleApp.Services
 {
     public class WasmFilePicker : IFilePicker
     {

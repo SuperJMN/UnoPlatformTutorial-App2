@@ -1,4 +1,4 @@
-﻿namespace SampleApp
+﻿namespace SampleApp.Services
 {
     public class UrlMessage
     {

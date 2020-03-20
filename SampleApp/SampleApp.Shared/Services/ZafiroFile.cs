@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace SampleApp.ViewModels
+namespace SampleApp.Services
 {
     public abstract class ZafiroFile
     {
