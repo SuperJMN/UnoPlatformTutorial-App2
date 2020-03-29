@@ -73,7 +73,7 @@
     <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI.Controls">
       <Version>5.1.0-build.200.gf9c311b069</Version>
     </PackageReference>
-    <PackageReference Include="Uno.UI" Version="2.2.0-dev.194" />
+    <PackageReference Include="Uno.UI" Version="2.2.0-dev.279" />
     <PackageReference Include="Uno.UI.RemoteControl" Version="2.2.0-dev.194" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.UniversalImageLoader" Version="1.9.32" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
